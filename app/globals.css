@@ -1,26 +1,98 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.5;
+}
+a {
+  color: #2563eb;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.site-header,
+.site-footer {
+  background: #f7f7f7;
+  padding: 14px 20px;
+}
+.site-header h1 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+.site-header nav a {
+  margin-left: 12px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+@media (min-width: 900px) {
+  .two-col {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  display: block;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+}
+.card img,
+.card video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.card .caption {
+  padding: 10px;
+  font-size: 0.9rem;
+  color: #111827;
+}
+
+.policy,
+.policy-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+}
+.policy-card {
+  margin-top: 32px;
+}
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem; /* px-4 */
+  padding-right: 1rem; /* px-4 */
 }
