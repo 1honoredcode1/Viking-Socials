@@ -1,28 +1,34 @@
 "use client";
 import { useEffect } from "react";
 
-export default function CuratorFeed() {
+export default function FacebookWidget() {
   useEffect(() => {
-    // Avoid loading script multiple times
-    if (document.getElementById("curator-script")) return;
-
+    // Optional: load SnapWidget script (if your embed needs it)
+    if (document.getElementById("snapwidget-script")) return;
     const script = document.createElement("script");
-    script.id = "curator-script";
+    script.id = "snapwidget-script";
+    script.src = "https://snapwidget.com/js/snapwidget.js";
     script.async = true;
-    script.charset = "UTF-8";
-    script.src =
-      "https://cdn.curator.io/published/5f6ec56f-e0b1-450e-a114-21664595cf0f.js"; // your curator.io link
     document.body.appendChild(script);
   }, []);
 
   return (
-    <section >
-      <h2>Social Feed</h2>
-      <div
-        id="curator-feed-default-feed-layout"
-        className="w-full max-w-6xl mx-auto"
-      >
-      </div>
+    <section className="flex justify-center items-center w-full m-0 p-0">
+      <iframe
+        src="https://snapwidget.com/embed/1109543"
+        className="snapwidget-widget"
+        frameBorder="0"
+        scrolling="no"
+        style={{
+          border: "none",
+          overflow: "hidden",
+          width: "100%",
+          maxWidth: "765px",
+          height: "510px",
+          display: "block",
+        }}
+        title="Facebook Feed"
+      />
     </section>
   );
 }

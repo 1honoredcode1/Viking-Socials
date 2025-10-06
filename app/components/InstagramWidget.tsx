@@ -3,7 +3,7 @@ import { useEffect } from "react";
 
 export default function InstagramWidget() {
   useEffect(() => {
-    // Load SnapWidget script once
+    // Optional: load SnapWidget JS (some embeds use it)
     if (document.getElementById("snapwidget-script")) return;
     const script = document.createElement("script");
     script.id = "snapwidget-script";
@@ -15,7 +15,7 @@ export default function InstagramWidget() {
   return (
     <section className="flex justify-center items-center w-full m-0 p-0">
       <iframe
-        src="https://snapwidget.com/embed/1109483"
+        src="https://snapwidget.com/embed/1109542"
         className="snapwidget-widget"
         frameBorder="0"
         scrolling="no"
@@ -23,10 +23,9 @@ export default function InstagramWidget() {
           border: "none",
           overflow: "hidden",
           width: "100%",
-          maxWidth: "900px",
+          maxWidth: "765px",
           height: "510px",
           display: "block",
-          margin: "0 auto",
         }}
         title="Instagram Feed"
       />
